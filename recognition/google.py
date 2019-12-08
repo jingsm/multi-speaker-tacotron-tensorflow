@@ -16,8 +16,8 @@ def text_recognition(path, config):
     txt_path = root + ".txt"
 
     if os.path.exists(txt_path):
-        with open(txt_path) as f:
-            out = json.loads(open(txt_path).read())
+        with open(txt_path, encoding='utf-8') as f:
+            out = json.loads(f.read())
             return out
 
     from google.cloud import speech
